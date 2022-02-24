@@ -9,14 +9,18 @@ export function Header() {
   return (
     <View style={styles.container}>
       <LogoSvg />
-      <UserPhoto
-        imageUri='https://github.com/hugolfsimoes.png'
-      />
-      <TouchableOpacity>
-        <Text style={styles.logoutText}>
-          Sair
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.logoutButton}>
+        <UserPhoto
+          imageUri='https://github.com/hugolfsimoes.png'
+        />
+        <TouchableOpacity>
+          <Text style={styles.logoutText}>
+            Sair
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+
     </View>
   );
 }
