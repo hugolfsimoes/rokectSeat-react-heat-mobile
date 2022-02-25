@@ -5,8 +5,9 @@ import {
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
-import {StatusBar} from 'expo-status-bar';
-import {Home} from './src/screens/Home';
+import { StatusBar } from 'expo-status-bar';
+import { AuthProvider } from './src/hooks/auth';
+import { Home } from './src/screens/Home';
 export default function App() {
   const [ fontsLoaded ] = useFonts({
     Roboto_400Regular,
@@ -17,9 +18,12 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <>
-      <StatusBar style='light' />
+    <AuthProvider>
+      <StatusBar
+        style='light'
+        translucent
+        backgroundColor='transparent' />
       <Home />
-    </>
+    </AuthProvider>
   );
 }
